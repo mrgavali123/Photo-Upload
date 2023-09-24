@@ -9,22 +9,12 @@ from googleapiclient.http import MediaFileUpload
 # Function to upload photos to Google Drive
 def upload_photos_to_drive():
     # Define the Google Drive folder ID where you want to upload the photos.
-    folder_id = '1zpVC3O3XB6VTZzT-QHig85WmIUTkE4e3'
+    folder_id = 'Your Folder ID'
 
     # Load the service account credentials.
     credentials = service_account.Credentials.from_service_account_info(
         {
-  "type": "service_account",
-  "project_id": "boreal-analyzer-388209",
-  "private_key_id": "f8bd4de6dd060bb0006498aa141337ae22f4ec81",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCaD21ZalkKQjnr\nG2MZKCObe3nUVoS5CKSpXrRoY7OpUfpT63ITQXMGM8Ci1tBiiSIZB/N2V2iG4a9D\n5TLyLwwWKjoxRoP5DO0rUYR5692TJesAgqgS19oxgxKpUpDRm9Txao9NOczBKU23\nGuG50ewf2M9mSs/+amh5SHYvB3abr7Ho73tpcbEbDvPtRhXB/nP3wTCSYkxPc0NT\n5G3nKmlVDk6GvGLn1MpudZ2iFdY4E+zompjhyxH834UK4MBGtEF0nsf+6Gl0E+9N\nOL8jpYd9BP8HKzSZDXs+kZYVNeQXyqLBO0tWkudf6qR99jpoiZblJLckiwxM8mPA\nI0BNttzlAgMBAAECggEABYDjP0xOcFCLq3ZCf4MQu+dYzk466+CUVUfrT5wELoUd\nrq1yA/W/a1YiSGQ+dHlWolNHjg+ITeKLtXQKHQmzjP/RgrIfWSBuQTERIkkxP1Dy\n81qM24N3fsj3u9xrDPnb97XT9wZyEJJuUsoJ4e6kWJeRAnlOCIDPnkmJjfDeeqg+\ntOO3Xc0j3CADQYCxDF5HOHRUII8OPzAGNTcqgzQKEVcNtASOpDu7wIq0SAlRAEf6\nzudCLtHjfcoqOvizHvNbUioiXq0VW19V2YbbmZz4EF+yX9bU+iSKOUAtTneigAzo\nmhv2pBKzk+scALF/KjMPLGqXOZPMMZHdpKphYuEZ0QKBgQDWsC4/6nM0o7mUgSsV\nselBYDqwhmM74cyiUccchyjjWdTst2/6tUyxfmsLokfI34KCEql/+XCiCc8U9tvF\n27CkxKycCn987sGj20Wfj5M+6xZsrJ5QGs1k5FeT6g05RdTY0aOPRl1jgsU+ac4J\nFsLLCnKoB2LrRfuGPvYxyucybQKBgQC3tKKo/LTJauZqpZwPkLsDT2x8H2dZFMbT\nLCLHTVH0fWgtjV694Cb2VevTniEBj++u3MlzEvRT4eXYShTAI0Q+NYAQa4MlON3j\neJQ2314dVyXDz6gohzJcUjNQVgeFOI5UZ2lvaC2I03d0R2w0MhiVa5aPnWslvl6Y\nHtDMZoKJWQKBgA29JJiOhmTd/WhVg85VnlnCsL7POtaAMrpIhXd75s/11bx4WMAw\njgHl1y/daL6gHxf33cUEz4JvIkNzMMlOr9U7iNhLi7ERDm9P/vqhE4k5PiwiN9dk\nf7RvMHOUzNfXcjGV6OOoWx2dJsZBux+1xy17M68xGdF4nwoOSW8STw1ZAoGAJSKe\nvwpWgWDaszRHF95p74FerLisa5WHm6iQXzmCF6pCJPMu87McLS+xPFX61hYCnZaE\nIn7yZQKFM/PFvhFi+jBWcvtIx313XURCsdT1cXjsaWjQ1WB/DaqQNO0vF/8Wxnkh\nFyQ4EDCvNRI7DVITJiFZji6EOl0BQj74dllCigECgYBg+GA8QJpTk5gZ6ubTiZGK\nSpUj7E8Oo5kaMIn8v4owF9tXBO0U2S5MhAJROB+HrHIOeI0P+vpi+9NTnnTxKxbD\nep/GY30zUoT9Ueng2LX5QAdo2YEg7V89c2fmK5R6B5uhDRGDo05N7b3N1SceUSf+\njzmgeUxuxbuZQftSUkkcTA==\n-----END PRIVATE KEY-----\n",
-  "client_email": "myservice@boreal-analyzer-388209.iam.gserviceaccount.com",
-  "client_id": "116628351036159878850",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/myservice%40boreal-analyzer-388209.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
+  #Copy a json file content and paste here
 },
         scopes=['https://www.googleapis.com/auth/drive.file']
     )
@@ -33,7 +23,7 @@ def upload_photos_to_drive():
     drive_service = build('drive', 'v3', credentials=credentials)
 
     # Specify the directory containing the photos to upload.
-    photo_directory = 'D:/photo/New folder'  # Use forward slashes or double backslashes
+    photo_directory = 'Folder path of your pc that contain photos to upload'  # Use forward slashes or double backslashes
 
     # Initialize the message log
     log_msg.set("Starting photo upload...\n")
@@ -42,7 +32,7 @@ def upload_photos_to_drive():
     success_label.config(text="")
 
     # List all image files in the specified directory.
-    image_files = [f for f in os.listdir(photo_directory) if f.endswith(('.jpg', '.jpeg', '.png', '.gif', '.JPG'))]
+    image_files = [f for f in os.listdir(photo_directory) if f.endswith(('.jpg', '.jpeg', '.png', '.gif', '.JPG','.mp4'))]
 
     # Upload each image to Google Drive.
     for image_file in image_files:
